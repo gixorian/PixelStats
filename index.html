@@ -6,9 +6,11 @@
 <body>
   <!-- Imports -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="Setup.js"></script>
   <script type="text/javascript" src="Config.js"></script>
   <script type="text/javascript" src="DataManagement.js"></script>
+  <script type="text/javascript" src="JsonParser.js"></script>
 
   <!-- Drodown Div -->
   <div class="row">
@@ -19,7 +21,6 @@
         <li><button id="1" type="button">Bulbasaur</button></li>
         <li><button id="2" type="button">Charmander</button></li>
         <li><button id="3" type="button">Squirtle</button></li>
-        <li><button id="16" onclick="addPokemon(id)" type="button">Pidgey</button></li>
       </ul>
     </div>
 
@@ -35,17 +36,19 @@
 
   <script>
 
-    var newPokemonName = 'Rattata';
+    test();
+
+    var newPokemonName = 'Pidgey';
 
     var pokemonList = document.getElementById("pokemonList");
     var entry = document.createElement('li');
     pokemonList.appendChild(entry);
     var btn = document.createElement("button");
-    btn.id = 19;
+    btn.id = 16;
     btn.onclick = function(){
       addPokemon(btn.id);
     }
-    btn.innerHTML = "Rattata";
+    btn.innerHTML = newPokemonName;
     entry.appendChild(btn);
 
   </script>
