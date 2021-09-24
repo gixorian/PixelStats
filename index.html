@@ -8,16 +8,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="Setup.js"></script>
   <script type="text/javascript" src="Config.js"></script>
+  <script type="text/javascript" src="DataManagement.js"></script>
 
   <!-- Drodown Div -->
   <div class="row">
     <div class="left" style="background-color:#636363;">
       <h2 align="center" style="color:white;">Choose a Pokemon</h2>
       <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-      <ul id="myMenu">
-        <li><button type="button">Bulbasaur</button></li>
-        <li><button type="button">Charmander</button></li>
-        <li><button type="button">Squirtle</button></li>
+      <ul id="pokemonList">
+        <li><button id="1" type="button">Bulbasaur</button></li>
+        <li><button id="2" type="button">Charmander</button></li>
+        <li><button id="3" type="button">Squirtle</button></li>
+        <li><button id="16" onclick="addPokemon(id)" type="button">Pidgey</button></li>
       </ul>
     </div>
 
@@ -30,6 +32,23 @@
 
     </div>
   </div>
+
+  <script>
+
+    var newPokemonName = 'Rattata';
+
+    var pokemonList = document.getElementById("pokemonList");
+    var entry = document.createElement('li');
+    pokemonList.appendChild(entry);
+    var btn = document.createElement("button");
+    btn.id = 19;
+    btn.onclick = function(){
+      addPokemon(btn.id);
+    }
+    btn.innerHTML = "Rattata";
+    entry.appendChild(btn);
+
+  </script>
 
   <!-- Dropdown Script -->
   <script>
@@ -57,6 +76,10 @@
       config
     );
   </script>
+
+
+
+
 
 </body>
 </html>

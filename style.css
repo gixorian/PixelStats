@@ -47,13 +47,13 @@ body {
 }
 
 /* Style the navigation menu inside the left column */
-#myMenu {
+#pokemonList {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-#myMenu button {
+#pokemonList button {
   width: 98%;
   background-color: white;
   border: none;
@@ -67,6 +67,6 @@ body {
   cursor: pointer;
 }
 
-#myMenu button:hover {
+#pokemonList button:hover {
   background-color: #eee;
 }

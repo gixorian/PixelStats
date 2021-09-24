@@ -1,6 +1,4 @@
-{
-	"Pokemon": [
-		{
+
 			"ID": 1,
 			"PokemonName": "Bulbasaur",
 			"Type1": "Grass",
@@ -14947,5 +14945,3 @@
 			"Gen": 8,
 			"Legendary": true
 		}
-	]
-}
