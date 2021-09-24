@@ -39,7 +39,7 @@ body {
 
 /* Style the search box */
 #mySearch {
-  width: 98%;
+  width: 94%;
   margin: 1px 4px;
   font-size: 18px;
   padding: 11px;
@@ -47,13 +47,15 @@ body {
 }
 
 /* Style the navigation menu inside the left column */
-#pokemonList {
+#pokemonMenuList {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  overflow: auto;
+  height: 86vh;
 }
 
-#pokemonList button {
+#pokemonMenuList button {
   width: 98%;
   background-color: white;
   border: none;
@@ -67,6 +69,6 @@ body {
   cursor: pointer;
 }
 
-#pokemonList button:hover {
+#pokemonMenuList button:hover {
   background-color: #eee;
 }

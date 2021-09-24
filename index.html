@@ -9,17 +9,13 @@
   <script type="text/javascript" src="Setup.js"></script>
   <script type="text/javascript" src="Config.js"></script>
   <script type="text/javascript" src="DataManagement.js"></script>
-  <script type="text/javascript" src="JsonParser.js"></script>
 
   <!-- Drodown Div -->
   <div class="row">
     <div class="left" style="background-color:#636363;">
       <h2 align="center" style="color:white;">Choose a Pokemon</h2>
       <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-      <ul id="pokemonList">
-        <li><button id="1" type="button">Bulbasaur</button></li>
-        <li><button id="2" type="button">Charmander</button></li>
-        <li><button id="3" type="button">Squirtle</button></li>
+      <ul id="pokemonMenuList">
       </ul>
     </div>
 
@@ -27,7 +23,7 @@
 
       <!-- Graph Div -->
       <div id="graph" align="center">
-        <canvas id="myChart" height="500" width="500"></canvas>
+        <canvas id="myChart" height="600" width="600"></canvas>
       </div>
 
     </div>
@@ -35,20 +31,21 @@
 
   <script>
 
-    test();
+    var pokemonMenuList = document.getElementById("pokemonMenuList");
 
-    var newPokemonName = 'Pidgey';
-
-    var pokemonList = document.getElementById("pokemonList");
-    var entry = document.createElement('li');
-    pokemonList.appendChild(entry);
-    var btn = document.createElement("button");
-    btn.id = 16;
-    btn.onclick = function(){
-      addPokemon(btn.id);
+    for (let i = 0; i < PokemonList.data.length; i++) {
+        let newPokemon = PokemonList.data[i];
+      	let newPokemonName = newPokemon.PokemonName;
+        let entry = document.createElement('li');
+        pokemonMenuList.appendChild(entry);
+        let btn = document.createElement("button");
+        btn.id = "btn"+i;
+        btn.onclick = function(){
+          addPokemon(i);
+        }
+        btn.innerHTML = newPokemonName;
+        entry.appendChild(btn);
     }
-    btn.innerHTML = newPokemonName;
-    entry.appendChild(btn);
 
   </script>
 
@@ -58,7 +55,7 @@
       var input, filter, ul, li, a, i;
       input = document.getElementById("mySearch");
       filter = input.value.toUpperCase();
-      ul = document.getElementById("myMenu");
+      ul = document.getElementById("pokemonMenuList");
       li = ul.getElementsByTagName("li");
       for (i = 0; i < li.length; i++) {
         btn = li[i].getElementsByTagName("button")[0];
@@ -78,10 +75,6 @@
       config
     );
   </script>
-
-
-
-
 
 </body>
 </html>
