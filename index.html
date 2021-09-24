@@ -4,14 +4,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="graph" align="center">
-    <canvas id="myChart" height="500" width="500"></canvas>
-  </div>
-
+  <!-- Imports -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="Setup.js"></script>
   <script type="text/javascript" src="Config.js"></script>
 
+  <!-- Drodown Div -->
+  <div class="row">
+    <div class="left" style="background-color:#636363;">
+      <h2 align="center" style="color:white;">Choose a Pokemon</h2>
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <ul id="myMenu">
+        <li><button type="button">Bulbasaur</button></li>
+        <li><button type="button">Charmander</button></li>
+        <li><button type="button">Squirtle</button></li>
+      </ul>
+    </div>
+
+    <div class="right">
+
+      <!-- Graph Div -->
+      <div id="graph" align="center">
+        <canvas id="myChart" height="500" width="500"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dropdown Script -->
+  <script>
+    function myFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        btn = li[i].getElementsByTagName("button")[0];
+        if (btn.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+  <!-- Graph Script -->
   <script>
     var myChart = new Chart(
       document.getElementById('myChart'),
