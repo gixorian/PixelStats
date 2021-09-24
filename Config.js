@@ -6,8 +6,17 @@ const config = {
       r: {
         max: 200,
         min: 0,
+        angleLines: {
+          color: 'black'
+        },
         ticks: {
             stepSize: 50
+        },
+        pointLabels: {
+          font:{
+            size: 20,
+            family: 'impact'
+          }
         }
       }
     },
