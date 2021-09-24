@@ -27,15 +27,5 @@ const data = {
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: 'rgb(255, 99, 132)'
-  }, {
-    label: 'Squirtle',
-    data: [44, 48, 65, 50, 64, 43],
-    fill: true,
-    backgroundColor: 'rgba(111, 200, 227, 0.4)',
-    borderColor: 'rgb(111, 200, 227)',
-    pointBackgroundColor: 'rgb(111, 200, 227)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(111, 200, 227)'
   }]
 };
