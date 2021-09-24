@@ -14,7 +14,7 @@ const config = {
     responsive: false,
     elements: {
       line: {
-        tension: 10,
+        tension: 0,
         borderWidth: 3
       }
     }
