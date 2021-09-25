@@ -24,44 +24,44 @@ function addPokemon(id){
   }
 
   if(numOfActivePokemon < 5){
-    switch (numOfActivePokemon) {
-      case 1:
-        graphColor = '111, 200, 227';
-        break;
-      case 2:
-        graphColor = '232, 94, 63';
-        break;
-      case 3:
-        graphColor = '118, 224, 110';
-        break;
-      case 4:
-        graphColor = '227, 225, 116';
-        break;
-      case 5:
-        graphColor = '37, 111, 212';
-        break;
-      default:
-        graphColor = '186, 109, 222';
-    }
+      switch (numOfActivePokemon) {
+        case 1:
+          graphColor = '111, 200, 227';
+          break;
+        case 2:
+          graphColor = '232, 94, 63';
+          break;
+        case 3:
+          graphColor = '118, 224, 110';
+          break;
+        case 4:
+          graphColor = '227, 225, 116';
+          break;
+        case 5:
+          graphColor = '37, 111, 212';
+          break;
+        default:
+          graphColor = '186, 109, 222';
+      }
 
-    var newData = {
-      id: id,
-      label: getPokemon(id).PokemonName,
-      data: [getPokemon(id).Hp, getPokemon(id).Attack, getPokemon(id).Defense, getPokemon(id).SpAttack, getPokemon(id).SpDefense, getPokemon(id).Speed],
-      fill: true,
-      backgroundColor: 'rgba('+graphColor+', '+graphAlpha+')',
-      borderColor: 'rgb('+graphColor+')',
-      pointBackgroundColor: 'rgb('+graphColor+')',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb('+graphColor+')',
-    };
+      var newData = {
+        id: id,
+        label: getPokemon(id).PokemonName,
+        data: [getPokemon(id).Hp, getPokemon(id).Attack, getPokemon(id).Defense, getPokemon(id).SpAttack, getPokemon(id).SpDefense, getPokemon(id).Speed],
+        fill: true,
+        backgroundColor: 'rgba('+graphColor+', '+graphAlpha+')',
+        borderColor: 'rgb('+graphColor+')',
+        pointBackgroundColor: 'rgb('+graphColor+')',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb('+graphColor+')',
+      };
 
-    data.datasets.push(newData);
+      data.datasets.push(newData);
 
-    myChart.update();
+      myChart.update();
 
-    numOfActivePokemon++;
+      numOfActivePokemon++;
   }
 }
 
