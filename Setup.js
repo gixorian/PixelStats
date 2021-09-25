@@ -17,6 +17,6 @@ const data = {
     pointBackgroundColor: 'rgb(143, 227, 111)',
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(143, 227, 111)'
+    pointHoverBorderColor: 'rgb(143, 227, 111)',
   }]
 };

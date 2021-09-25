@@ -19,7 +19,6 @@ function addPokemon(id){
 
   for (var i = 0; i < data.datasets.length; i++) {
     if(data.datasets[i].id == id){
-      removePokemon(id);
       return;
     }
   }
@@ -55,7 +54,7 @@ function addPokemon(id){
       pointBackgroundColor: 'rgb('+graphColor+')',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb('+graphColor+')'
+      pointHoverBorderColor: 'rgb('+graphColor+')',
     };
 
     data.datasets.push(newData);

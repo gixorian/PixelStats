@@ -19,7 +19,7 @@
       </ul>
     </div>
 
-    <div class="right">
+    <div class="center">
 
       <!-- Graph Div -->
       <div id="graph" align="center">
@@ -27,9 +27,48 @@
       </div>
 
     </div>
+
+    <div class="right" style="background-color:#636363;">
+      <ul id="activePokemonList">
+      </ul>
+    </div>
   </div>
 
   <script>
+
+    var activePokemonList = document.getElementById("activePokemonList");
+
+    function deactivatePokemon(id){
+      let allActivePokemon = activePokemonList.getElementsByTagName("li");
+      let btn = allActivePokemon.getElementsByTagName("button");
+      console.log(btn);
+    }
+
+    function activatePokemon(id, name){
+
+      console.clear();
+      let allActivePokemon = activePokemonList.getElementsByTagName("button");
+
+      for (var i = 0; i < allActivePokemon.length; i++) {
+        if(allActivePokemon[i].id == "btn"+id){
+          return;
+        }
+      }
+
+      let pokemonEntry = document.createElement('li');
+      activePokemonList.appendChild(pokemonEntry);
+      let pokemonBtn = document.createElement("button");
+      pokemonBtn.id = "btn"+id;
+      pokemonBtn.onclick = function(){
+        removePokemon(id);
+        activePokemonList.removeChild(pokemonEntry);
+      }
+      pokemonBtn.innerHTML = name;
+      pokemonEntry.appendChild(pokemonBtn);
+
+      console.log(allActivePokemon.length + " " + id);
+
+    }
 
     var pokemonMenuList = document.getElementById("pokemonMenuList");
 
@@ -42,6 +81,7 @@
         btn.id = "btn"+i;
         btn.onclick = function(){
           addPokemon(i);
+          activatePokemon(i, newPokemonName);
         }
         btn.innerHTML = newPokemonName;
         entry.appendChild(btn);

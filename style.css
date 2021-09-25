@@ -31,15 +31,20 @@ body {
   padding-left: 8px;
 }
 
+.center {
+  flex: 80%;
+  height: 98vh;
+}
+
 /* Right column (page content) */
 .right {
-  flex: 65%;
-  padding: 15px;
+  flex: 20%;
+  height: 98vh;
 }
 
 /* Style the search box */
 #mySearch {
-  width: 94%;
+  width: 89%;
   margin: 1px 4px;
   font-size: 18px;
   padding: 11px;
@@ -56,12 +61,12 @@ body {
 }
 
 #pokemonMenuList button {
-  width: 98%;
+  width: 95%;
   background-color: white;
   border: none;
   padding: 10px 32px;
   text-align: left;
-  text-decoration: none
+  text-decoration: none;
   display: inline-block;
   font-size: 20px;
   font-family: impact;
@@ -70,5 +75,31 @@ body {
 }
 
 #pokemonMenuList button:hover {
+  background-color: #eee;
+}
+
+#activePokemonList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  height: 98vh;
+}
+
+#activePokemonList button {
+  width: 95%;
+  background-color: white;
+  border: none;
+  padding: 10px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-family: impact;
+  margin: 1px 4px;
+  cursor: pointer;
+}
+
+#activePokemonList button:hover {
   background-color: #eee;
 }
