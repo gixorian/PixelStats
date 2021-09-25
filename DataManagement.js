@@ -11,7 +11,7 @@ function test(){
   console.log(PokemonList);
 }
 
-var numOfActivePokemon = 1;
+var numOfActivePokemon = 0;
 let graphColor = '111, 200, 227';
 let graphAlpha = '0.4';
 
@@ -61,7 +61,7 @@ function addPokemon(id){
 
       myChart.update();
 
-      numOfActivePokemon++;
+
   }
 }
 

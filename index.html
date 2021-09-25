@@ -47,7 +47,6 @@
     function activatePokemon(id, name){
       console.log(numOfActivePokemon);
       if(numOfActivePokemon < 5){
-          console.clear();
           let allActivePokemon = activePokemonList.getElementsByTagName("button");
 
           for (var i = 0; i < allActivePokemon.length; i++) {
@@ -67,7 +66,7 @@
           pokemonBtn.innerHTML = name;
           pokemonEntry.appendChild(pokemonBtn);
 
-          console.log(allActivePokemon.length + " " + id);
+          numOfActivePokemon++;
       }
     }
 
